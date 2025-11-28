@@ -1,0 +1,91 @@
+body {
+  font-family: 'Cairo', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Animations */
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-move 10s ease infinite;
+}
+
+@keyframes logo-enter {
+  0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.logo-anim {
+  animation: logo-enter 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes fade-up {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-up-anim {
+  animation: fade-up 0.8s ease-out forwards;
+  opacity: 0; /* Start hidden */
+}
+
+.delay-500 { animation-delay: 0.5s; }
+.delay-1000 { animation-delay: 1.0s; }
+.delay-2000 { animation-delay: 2.0s; }
+
+@keyframes bounce-scroll {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+.animate-bounce-scroll {
+  animation: bounce-scroll 1.5s infinite;
+}
+
+/* Scroll Reveal Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card Hover Effect */
+.committee-card {
+  transition: all 0.3s ease;
+}
+.committee-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.committee-card:hover .icon-container {
+  background-color: #dc2626; /* red-600 */
+  color: white;
+}
+.committee-card:hover h3 {
+  color: #b91c1c; /* red-700 */
+}
