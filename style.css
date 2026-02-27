@@ -17,6 +17,21 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+/* QR Code fixed size */
+.qr-code {
+  width: 120px;       /* تحكم في العرض */
+  height: 120px;      /* تحكم في الارتفاع */
+  max-width: 100%;    /* يمنع تجاوز حجم الحاوية */
+  object-fit: contain; /* يحافظ على النسبة بدون تمدد */
+  display: block;
+  margin: 0 auto;     /* لتوسيط الصورة داخل الحاوية */
+}
+@media (max-width: 768px) {
+  .qr-code {
+    width: 80px;
+    height: 80px;
+  }
+}
 
 /* Animations */
 @keyframes gradient-move {
